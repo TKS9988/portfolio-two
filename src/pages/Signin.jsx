@@ -44,7 +44,7 @@ const Signin = () => {
         </div>
         <div className={Style.right}>
           <div className={Style.sinupBx}>
-            <h2>Sign&nbsp;in</h2>
+            <h2>Sign&nbsp;In</h2>
             <TextBox
               className={"inputBx"}
               label={"Email（メールアドレス）"}
