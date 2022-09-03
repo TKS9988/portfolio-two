@@ -10,7 +10,7 @@
 ・友だち追加
 ・サインイン・サインアップ
 
-##使い方
+## 使い方
 
 [こちらからアクセス](https://geoloca-cdead.web.app/signin)
 
