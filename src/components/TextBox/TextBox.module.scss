@@ -1,0 +1,9 @@
+#textbox {
+    width: 100%;
+    & div {
+      width: 100%;
+      & .inputBx {
+        width: 100%;
+      }
+    }
+  }

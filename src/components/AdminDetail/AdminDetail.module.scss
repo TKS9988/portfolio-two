@@ -1,0 +1,15 @@
+.adminDetail {
+    background: #fff;
+    width: 250px;
+    margin: 0 auto;
+    list-style-type: none;
+    text-align: left;
+    border: 2px solid #e96752;
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-sizing: border-box;
+    z-index: 99999;
+    li {
+      margin-bottom: 8px;
+    }
+  }

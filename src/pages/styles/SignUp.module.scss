@@ -1,0 +1,214 @@
+@import "./_breakpoint";
+@import "./_mixin";
+.ovf {
+  width: 100%;
+  overflow: hidden;
+  .left {
+    float: left;
+    width: 50%;
+    height: 100vh;
+    position: relative;
+    background: #b6c8ca;
+    .displayBx {
+      position: absolute;
+      left: 50%;
+      margin: 0 auto;
+      transform: translate(-50%, -50%);
+      .pcDisplay {
+        width: 90%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        .inner {
+          width: 100%;
+          padding: 10px 10px 5px 10px;
+          background: #fff;
+          border-radius: 5px;
+          box-sizing: border-box;
+          box-shadow: 0 50px 100px -20px rgb(50 50 93 / 25%),
+            0 30px 60px -30px rgb(0 0 0 / 30%),
+            inset 0 -2px 6px 0 rgb(10 37 64 / 35%);
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      .spDisplay {
+        position: absolute;
+        left: 0;
+        @include mq(vertical){
+          width: 30%;
+          top: 25%;
+        }
+        @include mq(beside){
+          top: 32%;
+          width: 27%;
+        }
+        .inner {
+          width: 100%;
+          padding: 10px 10px 5px 10px;
+          background: #fff;
+          border-radius: 5px;
+          box-sizing: border-box;
+          box-shadow: 0 50px 100px -20px rgb(50 50 93 / 25%),
+            0 30px 60px -30px rgb(0 0 0 / 30%),
+            inset 0 -2px 6px 0 rgb(10 37 64 / 35%);
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    float: right;
+    .sinupBx {
+      h2 {
+        font-size: 30px;
+        font-family: "Fredoka", sans-serif;
+        color: #333;
+        margin: 0 0 20px 0;
+      }
+      .editBtn {
+        background: #fb6b61;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px 0;
+        margin: 20px auto 0 auto;
+        border-radius: 5px;
+        box-sizing: border-box;
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+      }
+      .toSignUpSignIn {
+        width: 215px;
+        margin: 0 auto;
+        text-align: center;
+        .authBx {
+          display: flex;
+          margin: 10px auto 0 auto;
+          text-align: center;
+          color: #444;
+          span {
+            color: #444;
+            display: block;
+            line-height: 1.3;
+            position: relative;
+            svg{
+              display: block;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              left: 0;
+              margin: auto;
+            }
+          }
+          p {
+            line-height: 28px;
+            margin: 0 0 0 25px;
+            text-align: center;
+          }
+          &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+  @include mq(pc) {
+    .left {
+      .displayBx {
+        width: 75%;
+        height: 22vw;
+        top: 50%;
+      }
+    }
+    .right {
+      width: 50%;
+      height: 100vh;
+      position: relative;
+      .sinupBx {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+      }
+    }
+  }
+  @include mq(tab) {
+    .left {
+      width: 100%;
+      height: 50vh;
+      position: relative;
+      float: none;
+      .displayBx {
+        width: 60%;
+        height: 34vw;
+        top: 58%;
+        @include mq(beside){
+          width: 46%;
+          height:26vw;
+        }
+      }
+    }
+    .right {
+      float: none;
+      width: 100%;
+      background: #fff;
+      padding: 4% 0 0 0;
+      box-sizing: border-box;
+      position: relative;
+      .sinupBx {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+    .toSignUpSignIn {
+      display: none;
+    }
+  }
+  @include mq(sp) {
+    .left {
+      width: 100%;
+      height: 50vh;
+      position: relative;
+      float: none;
+      .displayBx {
+        @include mq(vertical){
+          width: 70%;
+          height: 40vw;
+          top: 58%;
+        }
+        @include mq(beside){
+          width: 35%;
+          height: 19vw;
+          top: 50%;
+        }
+      }
+    }
+    .right {
+      float: none;
+      width: 100%;
+      background: #fff;
+      padding: 5% 0;
+      box-sizing: border-box;
+      .sinupBx {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+    .toSignUpSignIn {
+      display: none;
+    }
+  }
+}

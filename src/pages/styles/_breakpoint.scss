@@ -1,0 +1,7 @@
+$breakpoints: (
+    "sp": "(max-width: 750px)",
+    "tab": "screen and (min-width: 751px) and (max-width: 1024px)",
+    "pc": "screen and (min-width: 1025px)",
+    "vertical": "(orientation: portrait)",
+    "beside":"(orientation: landscape)",
+) !default;

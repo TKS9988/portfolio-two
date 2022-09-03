@@ -1,0 +1,66 @@
+@import "../../pages/styles/_breakpoint";
+@import "../../pages/styles/_mixin";
+.signupsigninHeader {
+  position: absolute;
+  z-index: 999;
+  top: 20px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  div.left {
+    width: 45px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+@include mq(pc) {
+  .signupsigninHeader {
+    display: none;
+  }
+}
+@include mq(tab) {
+  .signupsigninHeader {
+    width: 90%;
+    .authBx {
+      display: block;
+      color: #fff;
+      line-height: 45px;
+      p {
+        margin: 0;
+      }
+    }
+    .left{
+      float:left;
+    }
+    .right{
+      float:right;
+    }
+  }
+  .sinupBx > form > div > div > div > input {
+    padding: 10px;
+  }
+}
+@include mq(sp) {
+  .signupsigninHeader {
+    width: 90%;
+    .authBx {
+      display: block;
+      color: #fff;
+      line-height: 45px;
+      p {
+        margin: 0;
+      }
+    }
+    .left{
+      float:left;
+    }
+    .right{
+      float:right;
+    }
+  }
+  .sinupBx > form > div > div > div > input {
+    padding: 10px;
+  }
+}

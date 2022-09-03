@@ -1,0 +1,244 @@
+@import "../../pages/styles/_breakpoint";
+@import "../../pages/styles/_mixin";
+.sidebarBx {
+  @include mq(pc) {
+    height: 100vh;
+    position: fixed;
+    z-index: 999999;
+    background: #b6c8ca;
+    .sidebarLeft {
+      background: #242831;
+      box-sizing: border-box;
+      float: left;
+      height: 100vh;
+      width: 66px;
+      position: relative;
+      .logo {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        img {
+          width: 100%;
+        }
+      }
+      .linkPeople {
+        position: absolute;
+        top: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        div {
+          color: #fff;
+          p {
+            margin: -15px 0 0 0;
+            color: #fff;
+            font-size: 10px;
+            text-align: center;
+          }
+          &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+          }
+        }
+        span {
+          margin-bottom: 5px;
+          font-size: 38px;
+          text-align: center;
+          display: block;
+          svg{
+            width: 28px;
+            height: auto;
+          }
+        }
+      }
+      .getLocation {
+        position: absolute;
+        bottom: 20px;
+        color: #fff;
+        width: 100%;
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+        span{
+          display: block;
+          margin: 0 auto;
+          text-align: center;
+        }
+        p {
+          font-size: 10px;
+          color: #fff;
+          margin: -4px;
+        }
+      }
+
+      .lst {
+        padding: 20px 0;
+        box-sizing: border-box;
+      }
+    }
+  }
+  @include mq(tab){
+    display: none;    
+  }
+  @include mq(sp) {
+    display: none;
+  }
+}
+
+.material-icons-outlined {
+  color: #fff;
+  font-size: 30px;
+}
+.sidebarRight {
+  height: 100vh;
+  width: 350px;
+  margin-left: 66px;
+  ul {
+    padding: 5% 2%;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 100%;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #fff;
+    }
+    &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    li.findFriend {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 2%;
+      padding-bottom: 2%;
+      h2 {
+        width: 80%;
+        text-align: left;
+        font-size: 20px;
+        padding: 2%;
+        box-sizing: border-box;
+        margin: 0;
+      }
+      div {
+        font-size: 10px;
+        text-align: left;
+        background: #33cc99;
+        border-radius: 5px;
+        padding: 1%;
+        box-sizing: border-box;
+        color: #fff;
+        width: 20%;
+        height: fit-content;
+        text-align: center;
+        span {
+          font-size: 20px;
+          text-align: center;
+          display: block;
+        }
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+      }
+    }
+    & li.friendLstTtl {
+      text-align: left;
+      margin-bottom: 1%;
+    }
+    & li.friendSearch {
+      display: flex;
+      form {
+        width: 80%;
+      }
+      span {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+        svg{
+          height: 25px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+    & li.friendList{
+      padding: 2%;
+      display: flex;
+      box-sizing: border-box;
+      background: #fff;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      position:relative;
+      &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+      }
+      p {
+        margin: 8px 12px;
+      }
+      .friendInfo{
+        width:100%;
+        display:flex;
+      }
+      .menu{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0px;
+        margin: auto;
+        display: block;
+        padding: 5px;
+        box-sizing: border-box;
+        width: 40px;
+        z-index: 9;
+        svg{
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          display: block;
+        }
+    }
+    & li.choiceFriendName {
+      padding: 2%;
+      display: flex;
+      box-sizing: border-box;
+      color: #fff;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+      p {
+        margin: 8px 12px;
+      }
+    }
+    & li.friendTxt {
+      background: #fff;
+      margin: 0 0 2% 0;
+      display: flex;
+      padding: 2%;
+      border-radius: 5px;
+      p {
+        margin: 8px 12px;
+      }
+    }
+  }
+}

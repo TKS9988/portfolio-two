@@ -1,0 +1,48 @@
+.friendDetail {
+    background: #fff;
+    width: 250px;
+    margin: 0 auto;
+    list-style-type: none;
+    text-align: left;
+    border: 2px solid #0099ff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: 99999;
+    padding: 25px 30px;
+    li {
+      margin-bottom: 8px;
+    }
+  }
+  .friendDetailNonShare {
+    background: #fff;
+    margin: 0 auto;
+    list-style-type: none;
+    text-align: left;
+    border: 2px solid #444;
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: 99999;
+    width: 250px;
+    ul {
+      width: 100%;
+      padding: 25px 30px 5px 30px;
+      li {
+        margin-bottom: 8px;
+        & li:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .messageBtn {
+      background: #0099ff;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px 0;
+      border-radius: 5px;
+      margin: 0px 30px 25px 30px;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }

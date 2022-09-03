@@ -1,0 +1,318 @@
+@import "./_breakpoint";
+@import "./_mixin";
+.choiceColorMode {
+  list-style-type: none;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  left: 50px;
+  @include mq(pc) {
+    display: flex;
+  }
+  @include mq(sp) {
+    display: block;
+    padding: 0 0 0 8px;
+    left: 0;
+  }
+  li {
+    background: #fff;
+    line-height: 2;
+    display: block;
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #444;
+    text-align: center;
+    @include mq(pc) {
+      width: 100px;
+    }
+    @include mq(sp) {
+      width: 90px;
+      border-radius: 3px;
+    }
+    &:hover {
+      color: #111;
+      cursor: pointer;
+    }
+  }
+}
+.shareBx {
+  position: absolute;
+  bottom: 20px;
+  z-index: 9;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  @include mq(pc) {
+    left: 0;
+  }
+  @include mq(tab) {
+    left: 0;
+  }
+  @include mq(sp) {
+    left: 0;
+  }
+  div {
+    background: #33cc99;
+    margin: 0 auto;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 0px;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 20px;
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+    @include mq(pc) {
+      width: 300px;
+    }
+    @include mq(sp) {
+      width: 50%;
+    }
+  }
+  div.startShare {
+    background: #33cc99;
+    @include mq(pc) {
+      width: 300px;
+    }
+    @include mq(tab) {
+      width: 50%;
+    }
+  }
+  .stopShare {
+    background: #fb6b61;
+    @include mq(tab) {
+      width: 50%;
+    }
+  }
+  .toggleChoiceMapMode {
+    border: 1px solid #ddd;
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    color: #444;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    span {
+      color: #666;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        color: #111;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    @include mq(pc) {
+      left: 85px;
+    }
+    @include mq(sp) {
+      bottom: 20px;
+      left: 10px;
+    }
+  }
+}
+.messageBx {
+  background: rgb(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  .message_bx_wrapper {
+    background: #b6c8ca;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+
+    @include mq(pc) {
+      width: 800px;
+      height: 50vh;
+    }
+    @include mq(sp) {
+      width: 95%;
+      max-height: 65%;
+      height: 100%;
+    }
+    .choiceFriendName {
+      position: fixed;
+      top: -57px;
+      z-index: 999;
+      width: 95%;
+      display: flex;
+      margin: auto;
+      right: 0;
+      left: 0;
+      color: #fff;
+      p {
+        margin: 0 0 0 15px;
+        line-height: 2.6;
+      }
+    }
+    .message_bx_inner {
+      background: #b6c8ca;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      -webkit-transform: translateY(-50%) translateX(-50%);
+      padding: 4%;
+      box-sizing: border-box;
+      overflow-y: scroll;
+      height: 50vh;
+      @include mq(pc) {
+        width: 800px;
+      }
+      @include mq(sp) {
+        width: 100%;
+      }
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #ddd;
+        box-shadow: 0 0 5px #ccc inset;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #fff;
+      }
+      .openMessage_bx {
+        padding: 0;
+      }
+      .messageCloseBtn {
+        background: #fb6b61;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 0;
+        margin: 0 auto;
+        border-radius: 5px;
+        @include mq(pc) {
+          width: 300px;
+        }
+        @include mq(sp) {
+          width: 60%;
+          // height: 100%;
+        }
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+ul.openMessage_bx {
+  li {
+    width: 100%;
+    height: auto;
+    position: unset;
+    margin-bottom: 2%;
+    overflow: hidden;
+    p {
+      background: #fff;
+      margin: 0;
+      padding: 2%;
+      box-sizing: border-box;
+      border-radius: 5px;
+      position: relative;
+      @include mq(pc) {
+        width: 90%;
+      }
+      @include mq(sp) {
+        width: 85%;
+      }
+    }
+  }
+  li.friendMessage {
+    .avatar_bx {
+      margin-right: 2%;
+      float: left;
+    }
+    p {
+      float: right;
+      span {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 8px 5px;
+        border-color: transparent transparent transparent #fff;
+        position: absolute;
+        left: -7px;
+        top: 9px;
+      }
+    }
+  }
+  li.myMessage {
+    .avatar_bx {
+      margin-left: 2%;
+      float: right;
+    }
+    p {
+      float: left;
+      span {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 8px;
+        border-color: transparent transparent transparent #fff;
+        position: absolute;
+        right: -7px;
+        top: 9px;
+      }
+    }
+  }
+  li.choiceFriendName {
+    p {
+      background: none;
+      text-align: left;
+    }
+  }
+}
+.message_submitBx {
+  padding: 4% 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  .left {
+    width: 90%;
+    height: fit-content;
+  }
+  .right {
+    width: 10%;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    text-align: right;
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+.gm-control-active.gm-fullscreen-control {
+  display: none;
+}

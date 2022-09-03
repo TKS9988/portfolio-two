@@ -1,0 +1,272 @@
+@import "../../pages/styles/_breakpoint";
+@import "../../pages/styles/_mixin";
+.messageBxWrapper {
+  background: unset;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+@include mq(tab){
+  width:70%;
+}
+  .choiceFriendName {
+    z-index: 999;
+    width: 95%;
+    display: flex;
+    margin: auto;
+    right: 0;
+    left: 0;
+    color: #fff;
+    p {
+      margin: 0 0 0 15px;
+      line-height: 2.6;
+      color:#111;
+      font-weight:bold;
+    }
+  }
+  .messageBxInner {
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    padding: 4%;
+    box-sizing: border-box;
+    width: 100%;
+    ul.openMessageBx {
+
+      li {
+        width: 100%;
+        height: auto;
+        position: unset;
+        margin-bottom: 2%;
+        overflow: hidden;
+        p {
+          background: #fff;
+          margin: 0;
+          padding: 2%;
+          box-sizing: border-box;
+          border-radius: 5px;
+          position: relative;
+        }
+      }
+      li.friendMessage {
+          .friendMessageBx{
+            float: left;
+            overflow: hidden;
+            width: fit-content;
+            width:-moz-fit-content;
+            span.friendTxt{
+              float: right;
+              position: relative;
+              padding-left: 15px;
+              width: fit-content;
+              width:-moz-fit-content;
+              max-width: calc(100% - 55px);
+              p{
+                padding: 8px 10px;
+                box-sizing: border-box;
+                overflow-wrap:  break-word;
+                width: fit-content;
+                width:-moz-fit-content;
+              }
+              span{
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 5px 8px 5px 0;
+                border-color: transparent #fff transparent transparent;
+                position: absolute;
+                left: 7px;
+                top: 9px;
+              }
+            }
+        .avatarBx {
+          margin: 0;
+          float: left;
+        }
+      }
+      }
+      li.myMessage {
+        .myMessageBx{
+          float: right;
+          overflow: hidden;
+          width: fit-content;
+          width:-moz-fit-content;
+          span.friendTxt{
+            float: left;
+            position: relative;
+            padding-right: 15px;
+            width: fit-content;
+            width:-moz-fit-content;
+            max-width: calc(100% - 55px);
+            p{
+              padding: 8px 10px;
+              box-sizing: border-box;
+              overflow-wrap:  break-word;
+              width: fit-content;
+              width:-moz-fit-content;
+            }
+            span{
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 5px 0 5px 8px;
+              border-color: transparent transparent transparent #fff;
+              position: absolute;
+              right: 7px;
+              top: 9px;
+            }
+          }
+        }
+        .avatarBx {
+          margin-left: 2%;
+        }
+      }
+      li.choiceFriendName {
+        p {
+          background: none;
+          text-align: left;
+        }
+      }
+    }
+    .openMessageBx {
+      background: #b6c8ca;
+      padding: 2% 1%;
+      height: 250px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #b6c8ca;
+        box-shadow: 0 0 3px #ccc inset;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #242831;
+      }
+      @include mq(tab){
+        height: 150px;
+      }
+    }
+    .messageCloseBtn {
+      background: #fb6b61;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 0;
+      margin: 0 auto;
+      border-radius: 5px;
+      text-align: center;
+      @include mq(pc) {
+        width: 300px;
+      }
+      @include mq(sp) {
+        width: 60%;
+      }
+      &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.messageSubmitBx {
+  padding: 4% 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  .left {
+    width: 90%;
+    height: fit-content;
+  }
+  .right {
+    width: 10%;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    text-align: right;
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+
+@include mq(pc) {
+  .messageBxWrapper {
+    width: 600px;
+    height: 50vh;
+    .choiceFriendName {
+      .messageBxInner {
+        width: 500px;
+      }
+    }
+
+  }
+}
+@include mq(sp) {
+  .messageBxWrapper {
+    width: 95%;
+    max-height: 65%;
+    height: 100%;
+    .choiceFriendName {
+      .messageBxInner {
+        width: 100%;
+        .openMessageBx {
+          .messageCloseBtn {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+  @include mq(beside) {
+    .messageBxWrapper{
+      height: 90vh;
+      overflow: hidden;
+      width: 70%;
+      .messageBxInner{
+        width: 100%;
+        position: relative;
+        height: 90vh;
+        padding: 20px;
+        box-sizing: border-box;
+        .openMessageBx{
+          height: 150px;
+          margin: 10px 0;
+        }
+        .messageSubmitBx{
+          padding: 5px;
+        }
+      }
+    }
+  }
+  @include mq(tab){
+    .messageBxWrapper{
+      height: 90vh;
+      overflow: hidden;
+      width: 70%;
+      .messageBxInner{
+        width: 100%;
+        position: relative;
+        height: 90vh;
+        padding: 20px;
+        box-sizing: border-box;
+        .openMessageBx{
+          height: 150px;
+          margin: 10px 0;
+        }
+        .messageSubmitBx{
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
